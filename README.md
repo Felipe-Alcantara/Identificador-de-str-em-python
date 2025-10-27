@@ -1,7 +1,5 @@
 # 🔍 Identificador de Strings em Python
 
-# 🤖 Identificador de Strings em Python
-
 [![Python](https://img.shields.io/badge/python-3.x-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](LICENSE)
 
 Ferramenta simples para analisar características de strings em Python.
