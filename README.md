@@ -1,5 +1,17 @@
 # 🔍 Identificador de Strings em Python
 
+## 📑 Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Propósito](#propósito)
+- [Como Usar](#como-usar)
+- [Exemplo de Uso](#exemplo-de-uso)
+- [Tecnologias](#tecnologias)
+- [Aprendizados](#aprendizados)
+- [Melhorias Implementadas (2025)](#melhorias-implementadas-2025)
+- [Licença](#licença)
+- [Autor](#autor)
+
 > 📚 Meu primeiro projeto prático em Python - criado em 2024 quando estava começando minha jornada na programação!
 
 ## 📖 Sobre o Projeto
