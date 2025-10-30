@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Identificador de Strings — Brython</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.1/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.1/brython_stdlib.js"></script>
+</head>
+<body onload="brython()">
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="title">🤖 Identificador de Strings em Python</div>
+        <div class="note">Ferramenta simples para analisar características de strings (versão web com Brython)</div>
+      </div>
+      <div class="badges" style="margin-left:auto">
+        <img src="https://img.shields.io/badge/python-3.x-3776AB?style=flat&logo=python&logoColor=white" alt="python">
+        <img src="https://img.shields.io/badge/license-MIT-yellow.svg?style=flat" alt="mit">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="form-row">
+        <input id="input_text" type="text" placeholder="Digite qualquer texto para análise...">
+        <button id="analyze">Analisar</button>
+      </div>
+      <div class="note">Pressione Enter para analisar também.</div>
+
+      <div id="output" class="results"></div>
+
+      <div class="footer">Exemplo: insira "Python123" e veja as características.</div>
+    </div>
+
+    <div style="margin-top:18px;color:#9fb0c8;font-size:13px">
+      Este projeto foi originalmente criado em 2024 e atualizado para versão web com Brython.
+    </div>
+  </div>
+
+  <script type="text/python">
+from browser import document, html
+
+
+def identificar_string(texto):
+    # Normaliza para str (caso seja um objeto JS)
+    texto = str(texto)
+    verificacoes = [
+        ("É alfabético?", texto.isalpha()),
+        ("É numérico?", texto.isnumeric()),
+        ("É alfanumérico?", texto.isalnum()),
+        ("Está em maiúsculo?", texto.isupper()),
+        ("Está em minúsculo?", texto.islower()),
+        ("É um número decimal?", texto.isdecimal()),
+        ("É um identificador válido?", texto.isidentifier()),
+        ("Pode ser impresso?", texto.isprintable()),
+        ("Está em formato de título?", texto.istitle()),
+        ("É um dígito?", texto.isdigit()),
+        ("Contém apenas espaços?", texto.isspace())
+    ]
+    return verificacoes
+
+
+def exibir_resultados(texto, resultados):
+    out = document['output']
+    # limpa
+    out.clear()
+
+    # cabeçalho
+    header = html.DIV(f"📝 ANÁLISE DA STRING: '{texto}'", style={
+        'fontWeight':'700','marginBottom':'10px'})
+    out <= header
+
+    # lista de resultados
+    for descricao, resultado in resultados:
+        simb = '✅' if resultado else '❌'
+        row = html.DIV(Class='result-row')
+        desc = html.DIV(descricao, Class='result-desc')
+        val = html.DIV('True' if resultado else 'False', Class=('result-true' if resultado else 'result-false'))
+        left = html.DIV(simb + ' ')
+        # layout: left (emoji + desc) and right (True/False)
+        left_container = html.DIV()
+        left_container <= html.SPAN(simb + ' ', style={'marginRight':'8px'})
+        left_container <= desc
+        row <= left_container
+        row <= val
+        out <= row
+
+
+def on_analyze(ev=None):
+    txt = document['input_text'].value
+    resultados = identificar_string(txt)
+    exibir_resultados(txt, resultados)
+
+
+def on_keydown(ev):
+    # capturar Enter
+    try:
+        key = ev.key
+    except:
+        key = None
+    if key == 'Enter' or getattr(ev,'keyCode',None) == 13:
+        on_analyze()
+
+
+# binds
+document['analyze'].bind('click', on_analyze)
+document['input_text'].bind('keydown', on_keydown)
+  </script>
+</body>
+</html>
