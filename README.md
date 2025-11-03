@@ -1,11 +1,20 @@
-# 🔍 Identificador de Strings em Python
+# 🤖 Identificador de Strings em Python
 
 [![Python](https://img.shields.io/badge/python-3.x-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](LICENSE)
 
 Ferramenta simples para analisar características de strings em Python.
 
+## 🌐 Experimente Agora!
+
+**✨ [Acesse a versão web interativa](https://felipe-alcantara.github.io/Identificador-de-str-em-python/) ✨**
+
+Teste o analisador de strings diretamente no seu navegador, sem precisar instalar nada! A versão web usa Brython para executar Python no navegador.
+
+---
+
 ## 📑 Índice
 
+- [Experimente Agora!](#experimente-agora)
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Propósito](#propósito)
 - [Como Usar](#como-usar)
@@ -88,6 +97,7 @@ Digite alguma coisa para análise: Python123
 
 - Python 3.x
 - Métodos nativos de strings (`isalpha()`, `isnumeric()`, `isalnum()`, etc.)
+- Brython (versão web)
 
 ## 📝 Aprendizados
 
@@ -104,6 +114,7 @@ Este projeto me ajudou a:
 - 🎨 Saída formatada com emojis e alinhamento
 - 🏗️ Estrutura profissional com `if __name__ == "__main__"`
 - 📖 README completo e detalhado
+- 🌐 Versão web interativa com Brython (sem instalação necessária!)
 
 ## 📄 Licença
 
